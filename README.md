@@ -1,8 +1,8 @@
 # jQuery AniView
 
-A jQuery plugin that employs animate.css to enable animations when content comes into view.
+A jQuery plugin that works in harmony with animate.css in order to enable animations only when content comes into view.
 
-## demo
+## Demo
 
 http://jjcosgrove.github.io/jquery-aniview/
 
@@ -20,8 +20,8 @@ $('.aniview').AniView(options);
 ```
 Option  | Type | Description |  Default
 ------------- | ------------- | ------------- | -------------
-animateThreshold  | int | +ve numbers delay the animation sequence until 'n' pixels have come into view. -ve numbers will trigger the animation sequence prior to the element coming into view. | 0
-scrollPollInterval  | int | The frequency of which the user scrolling is 'tested'. This is in milliseconds (ms) and is an extension to jQuery in-built 'scroll' event/handler. | 20
+animateThreshold  | int | +ve numbers delay the animation sequence until the specified number pixels have come into view. -ve numbers will trigger the animation sequence prior to the element coming into view. | 0
+scrollPollInterval  | int | The frequency at which the user scrolling is 'polled' i.e. tested. This is in milliseconds (ms) and is an extension jQuery's in-built 'scroll' event/handler. | 20
 ## Markup
 ```HTML
 <div class="aniview" av-animation="slideInRight"></div>
@@ -29,7 +29,7 @@ scrollPollInterval  | int | The frequency of which the user scrolling is 'tested
 
 ## Full Example
 
-You may end up with something like:
+A typical working example (minimal) might look something like this:
 
 ```HTML
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ You may end up with something like:
 ```
 ## Notes
 
-Any element already in the viewport when the user enters the page will have it's animation triggered if one has been set. It will not wait for the user to begin scrolling.
+Any element already in the viewport when the user loads the page will have it's animation triggered imediately if one has been set. In other words, it will not wait for the user to begin scrolling before initiating the animation on these elements.
 
 ## Contribute
 
