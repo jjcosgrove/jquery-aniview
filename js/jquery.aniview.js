@@ -38,7 +38,7 @@
         //cycle through each matched element and wrap it in a block/div
         //and then proceed to fade out the inner contents of each matched element
         $(collection).each(function(index, element) {
-            $(element).wrap('<div class="aniview-container"></div>');
+            $(element).wrap('<div class="av-container"></div>');
             $(element).css('opacity', 0);
         });
 
@@ -58,10 +58,10 @@
         //cycle through each matched element to make sure any which should be animated into view,
         //are animated on page load rather than needing to wait for initial 'scrolled' event
         $(collection).each(function(index, element) {
-            var elementParentContainer = $(element).parent('.aniview-container');
-            if ($(element).is('[av-animation]') && !$(elementParentContainer).hasClass('aniview-visible') && EnteringViewport(elementParentContainer)) {
+            var elementParentContainer = $(element).parent('.av-container');
+            if ($(element).is('[av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                 $(element).css('opacity', 1);
-                $(elementParentContainer).addClass('aniview-visible');
+                $(elementParentContainer).addClass('av-visible');
                 $(element).addClass('animated ' + $(element).attr('av-animation'));
             }
         });
@@ -71,10 +71,10 @@
         //'scrollPollInterval' from the user visible options
         $(window).scrolled(settings.scrollPollInterval, function() {
             $(collection).each(function(index, element) {
-                var elementParentContainer = $(element).parent('.aniview-container');
-                if ($(element).is('[av-animation]') && !$(elementParentContainer).hasClass('aniview-visible') && EnteringViewport(elementParentContainer)) {
+                var elementParentContainer = $(element).parent('.av-container');
+                if ($(element).is('[av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                     $(element).css('opacity', 1);
-                    $(elementParentContainer).addClass('aniview-visible');
+                    $(elementParentContainer).addClass('av-visible');
                     $(element).addClass('animated ' + $(element).attr('av-animation'));
                 }
             });

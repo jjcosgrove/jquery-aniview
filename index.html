@@ -21,7 +21,7 @@
                     <p class="text-center">
                         Written by <a target="_blank" href="http://www.jjcosgrove.com">Jonathan James Cosgrove</a>
                     </p>
-                    <p class="text-center">A jQuery plugin that employs animate.css to enable animations when content comes into view.</p>
+                    <p class="text-center">A jQuery plugin that works in harmony with animate.css in order to enable animations only when content comes into view.</p>
                 </div>
             </div>
             <div class="row options">
@@ -40,7 +40,7 @@
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <p class="text-center aniview description" av-animation="fadeInUp">
                         jQuery AniView is a minimal (~1KB) jQuery plugin that allows you to add animations to your
-                        webpages with nothing more than a class identifier and a single data attribute with a couple of optional... options.<br><br>Scroll down to see how it works!
+                        webpages with nothing more than a class identifier and a single data attribute. There are also a couple of optional... options.<br><br>Scroll down to see how it works!
                     </p>
                 </div>
             </div>
@@ -62,6 +62,21 @@ $('.aniview').AniView(options);</pre>
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-6 col-md-offset-3 aniview slow options-table" av-animation="fadeIn">
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <td>Option</td><td>Type</td><td>Description</td><td>Default</td>
+                        </tr>
+                        <tr>
+                            <td>animateThreshold</td><td>int</td><td>+ve numbers delay the animation sequence until the specified number pixels have come into view. -ve numbers will trigger the animation sequence prior to the element coming into view.</td><td>0</td>
+                        </tr>
+                        <tr>
+                            <td>scrollPollInterval</td><td>int</td><td>The frequency at which the user scrolling is 'polled' i.e. tested. This is in milliseconds (ms) and is an extension jQuery's in-built 'scroll' event/handler.</td><td>20</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6 col-md-offset-3 aniview" av-animation="slideInRight">
                     <h3>Markup:</h3>
                     <pre>&lt;div class="aniview" av-animation="slideInRight"&gt;&lt;/div&gt;</pre>
@@ -74,11 +89,11 @@ $('.aniview').AniView(options);</pre>
                         i.e. when it comes into view by way of the bottom of the user's screen (viewport).
                     </p>
                     <p>
-                        Since it uses the freakin awesome <a target="_blank" href="https://daneden.github.io/animate.css/"><span class="animatecss-link">animate.css</span></a> 
+                        Since it uses the freakin awesome <a target="_blank" href="https://daneden.github.io/animate.css/"><span class="animatecss-link">animate.css</span></a> -
                         it supports all of the same animations that <em>it</em> does.
                     </p>
                     <p>
-                        All you have to do is simply declare what you want to use via the av-animation attribute.
+                        All you have to do is simply declare what you want to use via the <em>av-animation</em> attribute.
                     </p>
                 </div>
             </div>
@@ -96,7 +111,7 @@ $('.aniview').AniView(options);</pre>
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 aniview custom-classes" av-animation="slideInLeft">
-                    <p>You could even set up some custom animation classes like:</p>
+                    <p>You could even set up some custom animation classes so that animations occur in a specific order, e.g:</p>
                     <pre>
 .fast {
     -vendor-animation-duration: 1s;
@@ -109,8 +124,7 @@ $('.aniview').AniView(options);</pre>
 .reallyslow {
     -vendor-animation-duration: 6s;
     -vendor-animation-delay: 3s;
-}
-    </pre>
+}</pre>
                 </div>
             </div>
             <div class="row">
@@ -130,7 +144,7 @@ $('.aniview').AniView(options);</pre>
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 aniview conclusion" av-animation="fadeInUp">
-                    That should be enough to get you up and running!
+                    That should be enough to get you up and running! Check it out!
                 </div>
             </div>
             <div class="row options">
