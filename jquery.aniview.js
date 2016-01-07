@@ -1,4 +1,4 @@
-(function() {
+(function($) {
 
     //custom scroll replacement to allow for interval-based 'polling'
     //rathar than checking on every pixel
@@ -80,4 +80,4 @@
             });
         });
     };
-})();
+})(jQuery);
