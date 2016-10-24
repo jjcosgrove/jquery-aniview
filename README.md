@@ -6,6 +6,12 @@ A jQuery plugin that works in harmony with animate.css in order to enable animat
 
 http://jjcosgrove.github.io/jquery-aniview/
 
+## Installation (via npm)
+
+```Shell
+npm install jquery-aniview
+```
+
 ## Initialisation
 ```JavaScript
 $('.aniview').AniView();
