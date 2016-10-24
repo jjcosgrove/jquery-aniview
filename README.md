@@ -41,7 +41,7 @@ A typical working example (minimal) might look something like this:
     <title>My AniView Page</title>
     <link type="text/css" rel="stylesheet" href="animate.css">
     <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.aniview.min.js"></script>
+    <script type="text/javascript" src="jquery.aniview.js"></script>
     <script>
         $(document).ready(function(){
             $('.aniview').AniView();
