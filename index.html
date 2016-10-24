@@ -12,8 +12,8 @@
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-        <script type="text/javascript" src="js/jquery.aniview.min.js"></script>
-        <script type="text/javascript" src="js/script.min.js"></script>
+        <script type="text/javascript" src="js/jquery.aniview.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body>
         <div class="container">
@@ -29,31 +29,31 @@
             <div class="row options">
                 <div class="col-md-2 col-md-offset-4 text-center">
                     <a target="_blank" href="https://github.com/jjcosgrove/jquery-aniview/archive/master.zip">
-                        <button type="button" class="btn btn-default aniview" av-animation="bounce">Download</button>
+                        <button type="button" class="btn btn-default aniview" data-av-animation="bounce">Download</button>
                     </a>
                 </div>
                 <div class="col-md-2 text-center">
                     <a target="_blank" href="https://github.com/jjcosgrove/jquery-aniview">
-                        <button type="button" class="btn btn-default aniview" av-animation="bounce">GitHub</button>
+                        <button type="button" class="btn btn-default aniview" data-av-animation="bounce">GitHub</button>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
-                    <p class="text-center aniview description" av-animation="fadeInUp">
+                    <p class="text-center aniview description" data-av-animation="fadeInUp">
                         jQuery AniView is a minimal (~1KB) jQuery plugin that allows you to add animations to your
                         webpages with nothing more than a class identifier and a single data attribute. There are also a couple of optional... options.<br><br>Scroll down to see how it works!
                     </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview" av-animation="slideInLeft">
+                <div class="col-md-6 col-md-offset-3 aniview" data-av-animation="slideInLeft">
                     <h3>Initialisation:</h3>
                     <pre class="code javascript">$('.aniview').AniView();</pre>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview" av-animation="slideInUp">
+                <div class="col-md-6 col-md-offset-3 aniview" data-av-animation="slideInUp">
                     <h3>Options:</h3>
                     <pre class="code javascript">
 var options = {
@@ -64,7 +64,7 @@ $('.aniview').AniView(options);</pre>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview slow options-table" av-animation="fadeIn">
+                <div class="col-md-6 col-md-offset-3 aniview slow options-table" data-av-animation="fadeIn">
                     <table class="table table-striped table-bordered">
                         <tr>
                             <td>Option</td><td>Type</td><td>Description</td><td>Default</td>
@@ -79,13 +79,13 @@ $('.aniview').AniView(options);</pre>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview" av-animation="slideInRight">
+                <div class="col-md-6 col-md-offset-3 aniview" data-av-animation="slideInRight">
                     <h3>Markup:</h3>
-                    <pre class="code html">&lt;div class="aniview" av-animation="slideInRight"&gt;&lt;/div&gt;</pre>
+                    <pre class="code html">&lt;div class="aniview" data-av-animation="slideInRight"&gt;&lt;/div&gt;</pre>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview more-info" av-animation="bounceInLeft">
+                <div class="col-md-6 col-md-offset-3 aniview more-info" data-av-animation="bounceInLeft">
                     <p>
                         As you scroll down the page, each animation is triggered when the threshold is met.
                         i.e. when it comes into view by way of the bottom of the user's screen (viewport).
@@ -95,24 +95,24 @@ $('.aniview').AniView(options);</pre>
                         it supports all of the same animations that <em>it</em> does.
                     </p>
                     <p>
-                        All you have to do is simply declare what you want to use via the <em>av-animation</em> attribute.
+                        All you have to do is simply declare what you want to use via the <em>data-av-animation</em> attribute.
                     </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview box red" av-animation="rotateInUpLeft">
+                <div class="col-md-6 col-md-offset-3 aniview box red" data-av-animation="rotateInUpLeft">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview box green" av-animation="rotateInUpRight">
+                <div class="col-md-6 col-md-offset-3 aniview box green" data-av-animation="rotateInUpRight">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview box blue" av-animation="rotateInUpLeft">
+                <div class="col-md-6 col-md-offset-3 aniview box blue" data-av-animation="rotateInUpLeft">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview custom-classes" av-animation="slideInLeft">
+                <div class="col-md-6 col-md-offset-3 aniview custom-classes" data-av-animation="slideInLeft">
                     <p>You could even set up some custom animation classes so that animations occur in a specific order, e.g:</p>
                     <pre class="code css">
 .fast {
@@ -130,34 +130,34 @@ $('.aniview').AniView(options);</pre>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview small-box red fast" av-animation="fadeIn">
-                    &lt;div class="aniview fast" av-animation="fadeIn"&gt;
+                <div class="col-md-6 col-md-offset-3 aniview small-box red fast" data-av-animation="fadeIn">
+                    &lt;div class="aniview fast" data-av-animation="fadeIn"&gt;
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview small-box green slow" av-animation="fadeIn">
-                    &lt;div class="aniview slow" av-animation="fadeIn"&gt;
+                <div class="col-md-6 col-md-offset-3 aniview small-box green slow" data-av-animation="fadeIn">
+                    &lt;div class="aniview slow" data-av-animation="fadeIn"&gt;
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview small-box blue reallyslow" av-animation="fadeIn">
-                    &lt;div class="aniview reallyslow" av-animation="fadeIn"&gt;
+                <div class="col-md-6 col-md-offset-3 aniview small-box blue reallyslow" data-av-animation="fadeIn">
+                    &lt;div class="aniview reallyslow" data-av-animation="fadeIn"&gt;
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 aniview conclusion" av-animation="fadeInUp">
+                <div class="col-md-6 col-md-offset-3 aniview conclusion" data-av-animation="fadeInUp">
                     That should be enough to get you up and running! Check it out!
                 </div>
             </div>
             <div class="row options">
                 <div class="col-md-2 col-md-offset-4 text-center">
                     <a target="_blank" href="https://github.com/jjcosgrove/jquery-aniview/archive/master.zip">
-                        <button type="button" class="btn btn-default aniview" av-animation="bounce">Download</button>
+                        <button type="button" class="btn btn-default aniview" data-av-animation="bounce">Download</button>
                     </a>
                 </div>
                 <div class="col-md-2 text-center">
                     <a target="_blank" href="https://github.com/jjcosgrove/jquery-aniview">
-                        <button type="button" class="btn btn-default aniview" av-animation="bounce">GitHub</button>
+                        <button type="button" class="btn btn-default aniview" data-av-animation="bounce">GitHub</button>
                     </a>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-(function() {
+(function($) {
 
     //custom scroll replacement to allow for interval-based 'polling'
     //rathar than checking on every pixel
@@ -62,7 +62,7 @@
             if ($(element).is('[av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                 $(element).css('opacity', 1);
                 $(elementParentContainer).addClass('av-visible');
-                $(element).addClass('animated ' + $(element).attr('av-animation'));
+                $(element).addClass('animated ' + $(element).attr('data-av-animation'));
             }
         });
 
@@ -75,9 +75,9 @@
                 if ($(element).is('[av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                     $(element).css('opacity', 1);
                     $(elementParentContainer).addClass('av-visible');
-                    $(element).addClass('animated ' + $(element).attr('av-animation'));
+                    $(element).addClass('animated ' + $(element).attr('data-av-animation'));
                 }
             });
         });
     };
-})();
+})(jQuery);
