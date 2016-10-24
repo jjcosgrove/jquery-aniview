@@ -1,0 +1,23 @@
+{
+  "name": "jquery-aniview",
+  "version": "1.0.0",
+  "description": "A jQuery plugin that works in harmony with animate.css in order to enable animations only when content comes into view.",
+  "main": "dist/jquery.aniview.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjcosgrove/jquery-aniview.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "aniview",
+    "animation",
+    "animate.css"
+  ],
+  "author": "Jonathan James Cosgrove <jjcosgrove.inbox@gmail.com> (http://www.jjcosgrove.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jjcosgrove/jquery-aniview/issues"
+  },
+  "homepage": "https://github.com/jjcosgrove/jquery-aniview#readme"
+}
