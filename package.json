@@ -14,6 +14,10 @@
     "animation",
     "animate.css"
   ],
+  "dependencies": {
+    "jquery": ">1.1.0",
+    "animate.css": "*"
+  },
   "author": "Jonathan James Cosgrove <jjcosgrove.inbox@gmail.com> (http://www.jjcosgrove.com)",
   "license": "MIT",
   "bugs": {
