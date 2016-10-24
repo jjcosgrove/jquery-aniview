@@ -59,7 +59,7 @@
         //are animated on page load rather than needing to wait for initial 'scrolled' event
         $(collection).each(function(index, element) {
             var elementParentContainer = $(element).parent('.av-container');
-            if ($(element).is('[av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
+            if ($(element).is('[data-av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                 $(element).css('opacity', 1);
                 $(elementParentContainer).addClass('av-visible');
                 $(element).addClass('animated ' + $(element).attr('data-av-animation'));
@@ -72,7 +72,7 @@
         $(window).scrolled(settings.scrollPollInterval, function() {
             $(collection).each(function(index, element) {
                 var elementParentContainer = $(element).parent('.av-container');
-                if ($(element).is('[av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
+                if ($(element).is('[data-av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                     $(element).css('opacity', 1);
                     $(elementParentContainer).addClass('av-visible');
                     $(element).addClass('animated ' + $(element).attr('data-av-animation'));
