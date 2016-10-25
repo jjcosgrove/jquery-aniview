@@ -14,7 +14,7 @@
     "animation",
     "animate.css"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "jquery": ">1.1.0",
     "animate.css": "*"
   },
