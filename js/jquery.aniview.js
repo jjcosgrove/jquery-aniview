@@ -55,21 +55,13 @@
             return (elementTop < (viewportBottom - settings.animateThreshold)) ? true : false;
         }
 
-        //cycle through each matched element to make sure any which should be animated into view,
-        //are animated on page load rather than needing to wait for initial 'scrolled' event
-        $(collection).each(function(index, element) {
-            var elementParentContainer = $(element).parent('.av-container');
-            if ($(element).is('[data-av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
-                $(element).css('opacity', 1);
-                $(elementParentContainer).addClass('av-visible');
-                $(element).addClass('animated ' + $(element).attr('data-av-animation'));
-            }
-        });
-
-        //enable the scrolled event timer to watch for elements coming into the viewport
-        //from the bottom. default polling time is 20 ms. This can be changed using
-        //'scrollPollInterval' from the user visible options
-        $(window).scrolled(settings.scrollPollInterval, function() {
+        /**
+         * cycle through each element in the collection to make sure that any
+         * elements which should be animated into view, are...
+         *
+         * @param collection of elements to check
+         */
+        function RenderElementsCurrentlyInViewport(collection) {
             $(collection).each(function(index, element) {
                 var elementParentContainer = $(element).parent('.av-container');
                 if ($(element).is('[data-av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
@@ -78,6 +70,16 @@
                     $(element).addClass('animated ' + $(element).attr('data-av-animation'));
                 }
             });
+        }
+
+        //on page load, render any elements that are currently in view
+        RenderElementsCurrentlyInViewport(collection);
+
+        //enable the scrolled event timer to watch for elements coming into the viewport
+        //from the bottom. default polling time is 20 ms. This can be changed using
+        //'scrollPollInterval' from the user visible options
+        $(window).scrolled(settings.scrollPollInterval, function() {
+            RenderElementsCurrentlyInViewport(collection);
         });
     };
 })(jQuery);
