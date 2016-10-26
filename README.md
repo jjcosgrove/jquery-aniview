@@ -12,6 +12,32 @@ http://jjcosgrove.github.io/jquery-aniview/
 npm install jquery-aniview
 ```
 
+## CDN
+
+Instead of a local installation you may request a remote copy of jQuery AniView from [unpkg CDN](https://unpkg.com/).
+
+To request the latest version, use the following:
+
+```HTML
+<script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js">
+```
+
+For maximum security you may also decide to:
+
+* reference a specific version of jQuery AniView
+
+* [generate a SRI hash](https://www.srihash.org/) of that version and use it to ensure integrity
+
+* set the [CORS settings attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) to make anonymous requests to CDN
+
+Example:
+
+```HTML
+<script src="https://unpkg.com/jquery-aniview@1.0.1/dist/jquery.aniview.js"
+integrity="sha384-zDA6q/t525x7f6KD/OaOe24vCxSPU3eraILc2NU+ZA7ISsc3ExQbj8PB56FRMq6H"
+crossorigin="anonymous"></script>
+```
+
 ## Initialisation
 ```JavaScript
 $('.aniview').AniView();
