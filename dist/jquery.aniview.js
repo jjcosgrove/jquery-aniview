@@ -50,7 +50,6 @@
         function EnteringViewport(element) {
             var elementOffset = $(element).offset();
             var elementTop = elementOffset.top + $(element).scrollTop();
-            var elementBottom = elementOffset.top + $(element).scrollTop() + $(element).height();
             var viewportBottom = $(window).scrollTop() + $(window).height();
             return (elementTop < (viewportBottom - settings.animateThreshold)) ? true : false;
         }
