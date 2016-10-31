@@ -63,10 +63,15 @@
         function RenderElementsCurrentlyInViewport(collection) {
             $(collection).each(function(index, element) {
                 var elementParentContainer = $(element).parent('.av-container');
-                if ($(element).is('[data-av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
+                var elementChildren = $(element).children('[data-av-animation]');
+                if ( ( $(element).is('[data-av-animation]') || elementChildren.length ) && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                     $(element).css('opacity', 1);
                     $(elementParentContainer).addClass('av-visible');
-                    $(element).addClass('animated ' + $(element).attr('data-av-animation'));
+                    if ($(element).is('[data-av-animation]'))
+                        $(element).addClass('animated ' + $(element).attr('data-av-animation'));
+                    $(elementChildren).each( function(index, childEl){
+                        $(childEl).addClass('animated ' + $(childEl).attr('data-av-animation'));
+                    });
                 }
             });
         }
