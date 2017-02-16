@@ -1,7 +1,7 @@
 (function($) {
 
     //custom scroll replacement to allow for interval-based 'polling'
-    //rathar than checking on every pixel
+    //rather than checking on every pixel.
     var uniqueCntr = 0;
     $.fn.scrolled = function(waitTime, fn) {
         if (typeof waitTime === 'function') {
@@ -11,15 +11,11 @@
         var tag = 'scrollTimer' + uniqueCntr++;
         this.scroll(function() {
             var self = $(this);
-            var timer = self.data(tag);
-            if (timer) {
-                clearTimeout(timer);
-            }
-            timer = setTimeout(function() {
+            clearTimeout(self.data(tag));
+            self.data(tag, setTimeout(function() {
                 self.removeData(tag);
                 fn.call(self[0]);
-            }, waitTime);
-            self.data(tag, timer);
+            }, waitTime));
         });
     };
 
@@ -48,9 +44,7 @@
          * @param HTMLDOMElement element the current element to check
          */
         function EnteringViewport(element) {
-            var elementOffset = $(element).offset();
-            var elementTop = elementOffset.top + $(element).scrollTop();
-            var elementBottom = elementOffset.top + $(element).scrollTop() + $(element).height();
+            var elementTop = $(element).offset().top;
             var viewportBottom = $(window).scrollTop() + $(window).height();
             return (elementTop < (viewportBottom - settings.animateThreshold)) ? true : false;
         }
@@ -72,7 +66,7 @@
             });
         }
 
-        //on page load, render any elements that are currently in view
+        //on page load, render any elements that are currently/already in view
         RenderElementsCurrentlyInViewport(collection);
 
         //enable the scrolled event timer to watch for elements coming into the viewport
