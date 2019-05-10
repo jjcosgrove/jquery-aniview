@@ -19,7 +19,7 @@ Instead of a local installation you may request a remote copy of jQuery AniV
 To request the latest version, use the following:
 
 ```HTML
-<script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js">
+<script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js"></script>
 ```
 
 For maximum security you may also decide to:
