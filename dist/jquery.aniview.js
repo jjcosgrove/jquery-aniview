@@ -61,7 +61,7 @@
                 if ($(element).is('[data-av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                     $(element).css('opacity', 1);
                     $(elementParentContainer).addClass('av-visible');
-                    $(element).addClass('animated ' + $(element).attr('data-av-animation'));
+                    $(element).addClass('animate__animated animate__' + $(element).attr('data-av-animation'));
                 }
             });
         }
