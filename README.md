@@ -1,6 +1,6 @@
 # jQuery AniView
 
-A jQuery plugin that works in harmony with animate.css in order to enable animations only when content comes into view.
+A jQuery plugin that works in harmony with animate.css in order to enable animations only when content comes into view. Now supports v4.x of animate.css
 
 ## Demo
 
@@ -33,7 +33,7 @@ For maximum security you may also decide to:
 Example:
 
 ```HTML
-<script src="https://unpkg.com/jquery-aniview@1.0.1/dist/jquery.aniview.js"
+<script src="https://unpkg.com/jquery-aniview@1.0.3/dist/jquery.aniview.js"
 integrity="sha384-zDA6q/t525x7f6KD/OaOe24vCxSPU3eraILc2NU+ZA7ISsc3ExQbj8PB56FRMq6H"
 crossorigin="anonymous"></script>
 ```
@@ -45,6 +45,7 @@ $('.aniview').AniView();
 ## Options
 ```JavaScript
 var options = {
+    animateClass: 'animated',
     animateThreshold: 100,
     scrollPollInterval: 50
 }
@@ -52,11 +53,17 @@ $('.aniview').AniView(options);
 ```
 Option  | Type | Description |  Default
 ------------- | ------------- | ------------- | -------------
+animateClass | string | the animate.css class to use: 'animated' enables v3.x support and 'animate__animated' to enable v4.x support | animated
 animateThreshold  | int | +ve numbers delay the animation sequence until the specified number of pixels have come into view. -ve numbers will trigger the animation sequence prior to the element coming into view. | 0
 scrollPollInterval  | int | The frequency at which user scrolling is 'polled' i.e. tested. This is in milliseconds (ms) and is an extension to jQuery's in-built 'scroll' event/handler. | 20
-## Markup
+## Markup v3
 ```HTML
 <div class="aniview" data-av-animation="slideInRight"></div>
+```
+
+## Markup v4
+```HTML
+<div class="aniview" data-av-animation="animate__jackInTheBox"></div>
 ```
 
 ## Full Example
@@ -71,19 +78,26 @@ A typical working example (minimal) might look something like this:
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My AniView Page</title>
+    <!-- use the correct 'animateClass' option for your version! -->
     <link type="text/css" rel="stylesheet" href="animate.css">
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery.aniview.js"></script>
     <script>
         $(document).ready(function(){
-            $('.aniview').AniView();
+            $('.aniview-v3').AniView();
+            $('.aniview-v4').AniView({
+                animateClass: 'animate__animated'
+            });
         });
     </script>
 </head>
 <body>
     <div>
-        <p class="aniview" data-av-animation="slideInRight">
-            This is my awesome animated element!
+        <p class="aniview-v3" data-av-animation="slideInRight">
+            This is my awesome animated element using v3!
+        </p>
+        <p class="aniview-v4" data-av-animation="animate__jackInTheBox">
+            This is my awesome animated element using v4!
         </p>
     </div>
 </body>
