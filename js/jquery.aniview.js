@@ -24,8 +24,9 @@
         //some default settings. animateThreshold controls the trigger point
         //for animation and is subtracted from the bottom of the viewport.
         var settings = $.extend({
+            animateClass: 'animated',
             animateThreshold: 0,
-            scrollPollInterval: 20
+            scrollPollInterval: 20,
         }, options);
 
         //keep the matched elements in a variable for easy reference
@@ -61,7 +62,7 @@
                 if ($(element).is('[data-av-animation]') && !$(elementParentContainer).hasClass('av-visible') && EnteringViewport(elementParentContainer)) {
                     $(element).css('opacity', 1);
                     $(elementParentContainer).addClass('av-visible');
-                    $(element).addClass('animated ' + $(element).attr('data-av-animation'));
+                    $(element).addClass([settings.animateClass, $(element).attr('data-av-animation')].join(' '));
                 }
             });
         }
