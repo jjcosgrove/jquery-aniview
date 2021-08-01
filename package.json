@@ -1,6 +1,6 @@
 {
   "name": "jquery-aniview",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A jQuery plugin that works in harmony with animate.css in order to enable animations only when content comes into view.",
   "main": "dist/jquery.aniview.js",
   "repository": {
