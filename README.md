@@ -33,9 +33,7 @@ For maximum security you may also decide to:
 Example:
 
 ```HTML
-<script src="https://unpkg.com/jquery-aniview@1.0.3/dist/jquery.aniview.js"
-integrity="sha384-zDA6q/t525x7f6KD/OaOe24vCxSPU3eraILc2NU+ZA7ISsc3ExQbj8PB56FRMq6H"
-crossorigin="anonymous"></script>
+<script src="https://unpkg.com/jquery-aniview@1.0.3/dist/jquery.aniview.js" integrity="sha384-uvboBeyPkVGldyoicVJST1JEAbxI2W0lG2fFOyGvahZrC4jWiv0vmryxw9NXIEn6" crossorigin="anonymous"></script>
 ```
 
 ## Initialisation
